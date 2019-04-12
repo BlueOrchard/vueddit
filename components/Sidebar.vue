@@ -6,8 +6,8 @@
                 v-bind:key="post.data.id">
                     <SidebarPost 
                         v-bind:title="post.data.title"
-                        v-bind:id="post.data.id"
                         v-bind:thumbnails="post.data.preview"
+                        v-bind:permalink="post.data.permalink"
                     />
             </div>
         </div>

@@ -1,5 +1,7 @@
 <template>
-    <div class="inner-post">
+    <div class="inner-post"
+         v-on:click="setMainPost(permalink)"
+        >
         <div
             class="thumb"
             v-if="thumb">
@@ -12,6 +14,8 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex';
+
 export default {
     data () {
         return {
@@ -19,12 +23,17 @@ export default {
         }
     },
     props: [
-        'title', 'thumbnails'
+        'title', 'thumbnails', 'permalink'
     ],
     methods: {
+        ...mapActions({
+            setMainPostStore: "posts/setMainPost"
+        }),
         fixThumb(thumbnail){
             this.thumb = thumbnail.replace(/amp;/g, '');
-            console.log(this.thumb);
+        },
+        setMainPost(link){
+            this.setMainPostStore(link);
         }
     },
     mounted: function(){
@@ -41,6 +50,11 @@ export default {
         border-bottom: 1px solid #DDD;
         padding: 10px;
         display: flex;
+        cursor: pointer;
+
+        &:hover{
+            background: rgb(239, 239, 239);
+        }
 
         h2{
             font-size: 0.8em;
