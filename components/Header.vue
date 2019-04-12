@@ -19,5 +19,7 @@ export default {
         align-items: center;
         padding: 0 10px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.274);
+        z-index: 1;
+        position: relative;
     }
 </style>

@@ -35,6 +35,7 @@ export const actions = {
     },
     setMainPost(context, link){
         context.commit('setMainPostPermalink', link);
+        context.commit('setMainPostContent', "");
         axios
             .get('https://www.reddit.com' + link + '.json')
             .then((response) => {

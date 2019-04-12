@@ -2,7 +2,8 @@
     <div class="main-content">
         <div class="main-post"
              v-if="mainPostPermalink">
-                <MainContentBox/>
+                <MainContentBox
+                    v-bind:content="mainPostContent.data"/>
                 <!-- TODO: Comments -->
         </div>
         <div class="no-main"
@@ -31,6 +32,6 @@ export default {
 <style lang="scss">
     .main-content{
         width: calc(100% - 300px);
-        padding: 10px;
+        padding: 20px 30px;
     }
 </style>
