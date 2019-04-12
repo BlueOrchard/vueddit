@@ -1,6 +1,6 @@
 <template>
     <div class="main-content">
-        Test
+        Click on a Post to get Started.
     </div>
 </template>
 
@@ -13,5 +13,6 @@ export default {
 <style lang="scss">
     .main-content{
         width: calc(100% - 300px);
+        padding: 10px;
     }
 </style>

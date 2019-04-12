@@ -15,6 +15,7 @@ import Header from '~/components/Header.vue'
 import SideBar from '~/components/Sidebar.vue'
 import MainContent from '~/components/MainContent.vue'
 import axios from "axios";
+import {mapActions} from 'vuex';
 
 export default {
   components: {
@@ -25,13 +26,13 @@ export default {
         info: []
       }
   },
+  methods: {
+    ...mapActions({
+      initialFetch: 'posts/initialFetch'
+    })
+  },
   mounted: function () {
-      axios
-        .get('https://www.reddit.com/r/popular.json')
-        .then((response) => {
-          (this.info = response.data); 
-          console.log(this.info);
-        })
+      this.initialFetch();
   }
 }
 </script>
