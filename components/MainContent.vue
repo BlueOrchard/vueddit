@@ -1,12 +1,30 @@
 <template>
     <div class="main-content">
-        Click on a Post to get Started.
+        <div class="main-post"
+             v-if="mainPostPermalink">
+                <MainContentBox/>
+                <!-- TODO: Comments -->
+        </div>
+        <div class="no-main"
+             v-else>
+            Click on a post to get started.
+        </div>
     </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
+import MainContentBox from '~/components/partials/MainContentBox'
+
 export default {
-    
+    components: {
+        MainContentBox
+    },
+    computed: {
+        ...mapState('posts', [
+            'mainPostPermalink', 'mainPostContent'
+        ])
+    }
 }
 </script>
 

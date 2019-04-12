@@ -9,9 +9,6 @@ export const state = () => ({
   
 export const mutations = {
     addToList(state, objects){
-        // for(var index in objects){
-        //     state.postList.push(objects[index]);
-        // }
         objects.map((object) => {
             state.postList.push(object);
         })
