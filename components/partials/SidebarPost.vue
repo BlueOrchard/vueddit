@@ -9,6 +9,7 @@
         </div>
         <div class="content">
             <h2>{{ title }}</h2>
+            <p>/r/{{ subreddit }}</p>
         </div>
     </div>
 </template>
@@ -23,7 +24,7 @@ export default {
         }
     },
     props: [
-        'title', 'thumbnails', 'permalink'
+        'title', 'thumbnails', 'permalink', 'subreddit'
     ],
     methods: {
         ...mapActions({
@@ -47,17 +48,13 @@ export default {
 <style lang="scss">
     .inner-post{
         min-height: 80px;
-        border-bottom: 1px solid #DDD;
+        border-bottom: 1px dotted #DDD;
         padding: 10px;
         display: flex;
         cursor: pointer;
 
         &:hover{
-            background: rgb(239, 239, 239);
-        }
-
-        h2{
-            font-size: 0.8em;
+            background: rgb(252, 252, 252);
         }
 
         .thumb{
@@ -80,6 +77,21 @@ export default {
             width: calc(100% - 60px);
             padding-left: 10px;
             margin-left: auto;
+
+            h2{
+                font-size: 0.8em;
+                font-weight: normal;
+                background: rgb(242, 242, 242);
+                padding: 5px 10px;
+                border-radius: 5px;
+                margin: 0 0 5px;
+            }
+
+            p{
+                font-size: 0.7em;
+                color: rgb(37, 121, 211);
+                padding: 0 10px;
+            }
         }
     }
 </style>
