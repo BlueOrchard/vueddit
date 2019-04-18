@@ -2,7 +2,12 @@
     <div class="main-content-box">
         <!-- LOADING BOILERPLATE -->
         <div v-bind:class="loading ? 'loading' : 'loaded'">
-
+            <div class="placeholder-header"></div>
+            <div class="placeholder-text"></div>
+            <div class="placeholder-text"></div>
+            <div class="placeholder-text"></div>
+            <div class="placeholder-text"></div>
+            <div class="placeholder-text"></div>
         </div>
         
         <!-- POST LOADED -->
@@ -83,8 +88,23 @@ export default {
 </script>
 
 <style lang="scss">
+    @keyframes pulse{
+        0%{
+            opacity: 0.5;
+        }
+
+        50%{
+            opacity: 1;
+        }
+
+        100%{
+            opacity: 0.5;
+        }
+    }
+
     .main-content-box{
         border-bottom: 1px dotted #DDD;
+        padding: 0 0 30px;
 
         h1{
             margin: 0 0 20px;
@@ -120,6 +140,28 @@ export default {
 
             p{
                 margin: 0 0 20px;
+            }
+        }
+    }
+
+    .loading{
+        .placeholder{
+            &-header{
+                height: 50px;
+                margin: 0 0 20px;
+                width: 100%;
+                border-radius: 5px;
+                background: #f2f2f2;
+                animation: pulse 1s linear infinite;
+            }
+
+            &-text{
+                margin: 0 0 10px;
+                width: 100%;
+                height: 20px;
+                border-radius: 5px;
+                background: #f2f2f2;
+                animation: pulse 1s linear infinite;
             }
         }
     }

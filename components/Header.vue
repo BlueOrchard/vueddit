@@ -1,7 +1,7 @@
 <template>
     <div class="header" v-bind:class="loading ? 'loading' : 'loaded'">
         <div class="logo">
-            Vueddit
+            <span class="blue">VUE<span class="green">DDIT</span></span>
         </div>
     </div>
 </template>
@@ -40,6 +40,26 @@ export default {
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.274);
         z-index: 1;
         position: relative;
+
+        .logo{
+            font-weight: 800;
+            font-size: 2em;
+            line-height: 1;
+
+            .blue{
+                color: rgb(37, 90, 203);
+            }
+
+            .green{
+                color: rgb(76, 148, 235);
+            }
+
+            img{
+                width: 200px;
+                height: auto;
+                display: block;
+            }
+        }
 
         &.loaded{
             &:after{

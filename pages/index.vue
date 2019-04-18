@@ -42,5 +42,10 @@ export default {
     display: flex;
     height: calc(100vh - 50px);
   }
+
+  a{
+     color: rgb(44, 118, 210);
+     text-decoration: none;
+  }
 </style>
 
