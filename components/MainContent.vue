@@ -32,6 +32,6 @@ export default {
 <style lang="scss">
     .main-content{
         width: calc(100% - 300px);
-        padding: 20px 30px;
+        padding: 30px 30px;
     }
 </style>
