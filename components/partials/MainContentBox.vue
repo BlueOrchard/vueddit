@@ -50,8 +50,6 @@ export default {
     ],
     computed: {
         shouldShow(){
-            console.log(this.postData);
-            console.log(this.loading);
             return this.postData && !this.loading;
         },
         ...mapState({
@@ -60,11 +58,13 @@ export default {
     },
     methods: {
         fixHTML(html){
-            var fixedHTML = html;
-            fixedHTML = fixedHTML.replace(/amp;/g, '');
-            fixedHTML = fixedHTML.replace(/&lt;/g, '<');
-            fixedHTML = fixedHTML.replace(/&gt;/g, '>');
-            return fixedHTML;
+            if(html){
+                var fixedHTML = html;
+                fixedHTML = fixedHTML.replace(/amp;/g, '');
+                fixedHTML = fixedHTML.replace(/&lt;/g, '<');
+                fixedHTML = fixedHTML.replace(/&gt;/g, '>');
+                return fixedHTML;
+            }
         },
         updatePostData(dataProp){
             this.postData = dataProp;
@@ -73,7 +73,7 @@ export default {
     watch: {
         content: function(){
             // Map that long object of BS to postData
-            console.log("UPDATE DETECTED");
+            // console.log("UPDATE DETECTED");
             if(this.content){
                 this.updatePostData(this.content[0].data.children[0].data);
             }

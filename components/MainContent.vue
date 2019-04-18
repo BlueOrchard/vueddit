@@ -33,5 +33,6 @@ export default {
     .main-content{
         width: calc(100% - 300px);
         padding: 30px 30px;
+        overflow: scroll; 
     }
 </style>
