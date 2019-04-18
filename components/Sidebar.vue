@@ -8,6 +8,7 @@
                         v-bind:title="post.data.title"
                         v-bind:thumbnails="post.data.preview"
                         v-bind:permalink="post.data.permalink"
+                        v-bind:subreddit="post.data.subreddit"
                     />
             </div>
         </div>
