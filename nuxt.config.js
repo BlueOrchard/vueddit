@@ -3,6 +3,10 @@ import pkg from './package'
 export default {
   mode: 'spa',
 
+  // router: {
+  //   base: '/vueddit/'
+  // },
+
   /*
   ** Headers of the page
   */
