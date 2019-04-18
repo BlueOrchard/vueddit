@@ -2,6 +2,12 @@
 
 > A Reddit + Vue/Nuxt.js Implementation
 
+## Quick Screenshot
+![Screenshot](https://i.imgur.com/DFmBaAA.png)
+
+## Demo
+[Demo link](https://blueorchard.github.io/vueddit/)
+
 ## Build Setup
 
 ``` bash
